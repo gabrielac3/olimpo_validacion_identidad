@@ -1,11 +1,11 @@
 <div class="captureContent" *ngIf="showCam">
-  <h2>Captura de imágen</h2>
+<!--   <h2>Captura de imágen</h2> -->
   <div>
     <webcam *ngIf="webcamImage==null"
       [trigger]="invokeObservable"
       (imageCapture)="captureImg($event)"
-      [height]="300"
-      [width]="400"
+      [height]="480"
+      [width]="640"
       [switchCamera]="nextWebcamObservable"
       [videoOptions]="videoOptions"
       [imageQuality]="1"
@@ -20,9 +20,9 @@
 </div>
 <div class="captureContent" *ngIf="showCapture">
   <div id="results">
-    <h2>Imágen tomada</h2>
+   <!--  <h2>Imágen tomada</h2> -->
   </div>
-  <img [src]="webcamImage.imageAsDataUrl" height="300px" />
+  <img [src]="webcamImage.imageAsDataUrl" height="480px" />
   <button class="btnCapture" (click)="goToBack()">Guardar Imagen</button>
 </div>
 

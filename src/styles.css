@@ -48,7 +48,7 @@ button{
   background: url(./app/olimpobetT2.png);
   background-repeat: space;
   position: relative;
-  padding: 50px;
+  padding: 40px;
   max-height: 100vh;
   box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
   -webkit-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
@@ -57,7 +57,7 @@ button{
 
 @media (max-width: 768px){
   #qbox-container {
-  padding: 5%;
+  padding: 1%;
   }
   .logoOlimpo{
     width: 20%;
@@ -70,6 +70,11 @@ button{
 }
 
 @media (max-width: 426px){
+
+  #qbox-container {
+    padding: 1%;
+    }
+
   .container{
     min-height: 0vh;
     margin-top: 1%;
