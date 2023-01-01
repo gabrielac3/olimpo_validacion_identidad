@@ -1,0 +1,19 @@
+.captureContent{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0% 2% 2% 2%;
+}
+
+h2{
+  margin: 7px;
+}
+
+.btnCapture{
+  background-color: #f8f538;
+  border: #f8f538;
+  color: #004422;
+  margin-top: 7px;
+}
+

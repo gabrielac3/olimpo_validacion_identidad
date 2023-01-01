@@ -1,0 +1,14 @@
+h1{
+  font-size: 150%;
+}
+
+button{
+  background-color: #f8f538;
+  border: #f8f538;
+  color: #004422;
+  float: right;
+}
+
+p, ol{
+  font-size: 90%;
+}

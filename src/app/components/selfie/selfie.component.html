@@ -1,0 +1,38 @@
+<div class="selfieContent">
+  <div class="numberPart">
+    <h1><span class="circle">1</span></h1>
+    <div class="linea"></div>
+    <h1><span [ngClass]="showSelfie? 'green' : 'circle'">2</span></h1>
+    <div class="linea"></div>
+    <h1><span [ngClass]="showResult? 'green' : 'circle'">3</span></h1>
+  </div>
+
+  <div *ngIf="showSelfie">
+
+    <h2>Validación de foto de DNI</h2>
+
+      <i class="fa-light fa-image-polaroid-user"></i>
+
+      <div class="margin">
+        <label>A. Tomar una foto de su rostro (Selfie)</label>
+        <img class= "dniFrontal" src="../../../assets/selfie.jpg" alt="dniFrontal">
+        <button class="btnInsert" (click)="goToCaptureSelfie()" >Insertar</button>
+      </div>
+
+    <button class="btnSend" (click)="goToResult()">Siguiente</button>
+
+  </div>
+
+</div>
+
+<div class="resultContent" *ngIf="showResult">
+
+  <h2>Resultado</h2><br>
+
+  <h4>Su DNI fue validado con éxito</h4><br>
+
+  <button class="btnSend" (click)="endValid()">Finalizar</button>
+
+</div>
+
+

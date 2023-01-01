@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #F2F2F2;
+  font-family: 'Roboto', sans-serif;
+  color:#004422;
+}
+
+.container{
+  display:flex;
+  align-items: center;
+  min-height: 100vh;
+/*   d-flex align-items-center min-vh-100 */
+}
+
+button{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.title{
+  background-color: #004422;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+}
+
+.validTitle{
+  margin: 0px;
+  padding: 0px;
+  font-size: 130%;
+  color:#f8f538;
+}
+
+.logoOlimpo{
+  width: 15%;
+}
+
+#qbox-container {
+  background: url(./app/olimpobetT2.png);
+  background-repeat: space;
+  position: relative;
+  padding: 50px;
+  max-height: 100vh;
+  box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
+  -webkit-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
+  -moz-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
+}
+
+@media (max-width: 768px){
+  #qbox-container {
+  padding: 5%;
+  }
+  .logoOlimpo{
+    width: 20%;
+  }
+
+  .validTitle{
+    font-size: 120%;
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 426px){
+  .container{
+    min-height: 0vh;
+    margin-top: 1%;
+  }
+
+  .logoOlimpo{
+    width: 35%;
+  }
+  .validTitle{
+    font-size: 85%;
+    padding: 2% 0% 2% 10%;
+  }
+
+}

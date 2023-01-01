@@ -1,0 +1,41 @@
+<div class="part1Content">
+  <div class="numberPart">
+    <h1><span class="green">1</span></h1>
+    <div class="linea"></div>
+    <h1><span class="circle">2</span></h1>
+    <div class="linea"></div>
+    <h1><span class="circle">3</span></h1>
+  </div>
+
+  <h2>Validación de datos de DNI</h2>
+
+  <div class="info">
+
+    <div class="margin">
+      <label>A. Número de Documento:   </label>
+      <label>{{sesionDni}}</label>
+    </div>
+
+    <div class="margin">
+      <label>B. Foto de Documento (Parte Frontal) {{markFrontal}}</label>
+      <img class= "dniFrontal" src="../../../assets/dniFrontal.jpg" alt="dniFrontal">
+      <button class="btnInsert" (click)="goToCaptureFrontal()" >Insertar</button>
+    </div>
+
+    <div class="margin">
+      <label>C. Foto de Documento (Parte Posterior) {{markBack}}</label>
+      <img class= "dniPosterior" src="../../../assets/dniPosterior.png" alt="dniFrontal">
+      <button class="btnInsert" (click)="goToCaptureBack()" >Insertar</button>
+    </div>
+
+  </div>
+
+  <div class="msgError">
+    <label class="error" *ngIf="captureEmpty">Debe ingresar todas las fotos</label>
+  </div>
+
+  <button class="btnSend" (click)="goToSelfie()">Siguiente</button>
+
+</div>
+
+
