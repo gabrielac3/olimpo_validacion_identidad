@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dni } from 'src/app/Interfaces/dni.interface';
 import { Fotodni } from 'src/app/Interfaces/fotodni.interface';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-dni',
@@ -51,16 +51,27 @@ export class DniComponent implements OnInit{
     sessionStorage.setItem('flag', JSON.stringify("back"));
   }
 
-  getToken(){
-    this.restService.sendDni(this.dni);
-  }
+
+/*   getToken(){
+    this.restService.sendDni(this.dni)
+    .subscribe(data => {
+      console.log(data)
+      let token = data.values;
+      let t = token[0].t;
+      sessionStorage.setItem('token', t);
+    })
+  } */
 
   sendDniFotos(){
-    this.fotodni.DNI = this.sesionDni;
+   /*  this.fotodni.DNI = this.sesionDni; */
+   this.fotodni.DNI = '44123456';
     this.fotodni.FOTO_FRONTAL = sessionStorage.getItem('dniFrontal');
     this.fotodni.FOTO_POSTERIOR = sessionStorage.getItem('dniBack');
     console.log(this.fotodni);
-    this.restService.sendFotos(this.fotodni);
+    this.restService.sendFotos(this.fotodni)
+    .subscribe(data => {
+      console.log(data)
+    })
   }
 
   goToSelfie(){

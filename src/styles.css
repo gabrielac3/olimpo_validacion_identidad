@@ -57,8 +57,9 @@ button{
 
 @media (max-width: 768px){
   #qbox-container {
-  padding: 1%;
+  padding: 2%;
   }
+
   .logoOlimpo{
     width: 20%;
   }
@@ -84,7 +85,7 @@ button{
     width: 35%;
   }
   .validTitle{
-    font-size: 85%;
+    font-size: 90%;
     padding: 2% 0% 2% 10%;
   }
 

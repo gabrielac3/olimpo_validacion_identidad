@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dni } from 'src/app/Interfaces/dni.interface';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-prueba-cliente',
@@ -24,7 +24,13 @@ export class PruebaClienteComponent implements OnInit{
   }
 
   getToken(){
-    this.restService.sendDni(this.dni);
+    this.restService.sendDni(this.dni)
+    .subscribe(data => {
+      console.log(data)
+      let token = data.values;
+      let t = token[0].t;
+      sessionStorage.setItem('token', t);
+    })
   }
 
   goToinstructions(){
@@ -33,3 +39,5 @@ export class PruebaClienteComponent implements OnInit{
       }
 
 }
+
+

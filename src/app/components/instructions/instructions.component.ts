@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-instructions',
@@ -21,11 +21,23 @@ export class InstructionsComponent implements OnInit {
     this.router.navigate(['dni']);
   }
 
- goToPart1(){
-    this.restService.getDNI();
+  getDni(){
+    this.restService.getDNI()
+    .subscribe(data => {
+      console.log(data)
+      let dniNumber = data.values;
+      let dni = dniNumber[0].dni;
+      sessionStorage.setItem('dni', dni);
+    })
+  }
 
+ goToPart1(){
+/*     this.restService.getDNI();
     setTimeout(()=>{
       this.router.navigate(['dni']);
-    },800);
+    },800); */
+
+    this.getDni();
+    this.router.navigate(['dni']);
   }
 }

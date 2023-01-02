@@ -8,9 +8,12 @@ import { DniComponent } from './components/dni/dni.component';
 import { SelfieComponent } from './components/selfie/selfie.component';
 import { WebcamModule } from 'ngx-webcam';
 import { CaptureComponent } from './components/capture/capture.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PruebaClienteComponent } from './components/prueba-cliente/prueba-cliente.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerModule } from './components/spinner/spinner.module';
+import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 
 
 @NgModule({
@@ -27,9 +30,12 @@ import { PruebaClienteComponent } from './components/prueba-cliente/prueba-clien
     AppRoutingModule,
     WebcamModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SpinnerModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
