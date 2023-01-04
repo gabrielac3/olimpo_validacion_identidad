@@ -63,8 +63,8 @@ export class DniComponent implements OnInit{
   } */
 
   sendDniFotos(){
-   /*  this.fotodni.DNI = this.sesionDni; */
-   this.fotodni.DNI = '44123456';
+    this.fotodni.DNI = this.sesionDni;
+   /* this.fotodni.DNI = '44123456'; */
     this.fotodni.FOTO_FRONTAL = sessionStorage.getItem('dniFrontal');
     this.fotodni.FOTO_POSTERIOR = sessionStorage.getItem('dniBack');
     console.log(this.fotodni);

@@ -58,12 +58,14 @@ export class RestService {
 getDNI(): Observable <any> {
 
   let tokensesion = sessionStorage.getItem('token');
+  console.log(tokensesion);
 
   const headers = {
     'Authorization': 'Bearer '+ tokensesion,
     'Content-Type': 'application/json'
   }
-  return this.http.post(this.baseURL + 'DNI/ObtenerDNI', {'headers':headers})
+  const body=JSON.stringify('');
+  return this.http.post(this.baseURL + 'DNI/ObtenerDNI', body, {'headers':headers})
 }
 
 /* getDNI(){
