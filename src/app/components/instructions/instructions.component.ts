@@ -33,7 +33,6 @@ export class InstructionsComponent implements OnInit {
       sessionStorage.setItem('dni', dni);
       sessionStorage.setItem('token', token);
   })
-
   }
 
   senPart1(){
