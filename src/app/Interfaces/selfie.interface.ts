@@ -1,3 +1,4 @@
 export interface Selfie{
-  FOTO_SELFIE: string;
+  DNI: any;
+  FOTO_SELFIE: any;
 }

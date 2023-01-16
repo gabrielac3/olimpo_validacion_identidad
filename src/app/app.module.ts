@@ -11,7 +11,6 @@ import { CaptureComponent } from './components/capture/capture.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PruebaClienteComponent } from './components/prueba-cliente/prueba-cliente.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerModule } from './components/spinner/spinner.module';
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 

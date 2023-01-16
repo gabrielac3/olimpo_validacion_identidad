@@ -8,7 +8,6 @@ body{
   display:flex;
   align-items: center;
   min-height: 100vh;
-/*   d-flex align-items-center min-vh-100 */
 }
 
 button{
@@ -73,19 +72,19 @@ button{
 @media (max-width: 426px){
 
   #qbox-container {
-    padding: 1%;
+    padding: 3%
     }
 
   .container{
     min-height: 0vh;
-    margin-top: 1%;
+    margin-top: 3%;
   }
 
   .logoOlimpo{
     width: 35%;
   }
   .validTitle{
-    font-size: 90%;
+    font-size: 95%;
     padding: 2% 0% 2% 10%;
   }
 

@@ -2,7 +2,7 @@
   <div class="numberPart">
     <h1><span class="circle">1</span></h1>
     <div class="linea"></div>
-    <h1><span [ngClass]="showSelfie? 'green' : 'circle'">2</span></h1>
+    <h1><span [ngClass]="showSelfie || dataMsgError? 'green' : 'circle'">2</span></h1>
     <div class="linea"></div>
     <h1><span [ngClass]="showResult? 'green' : 'circle'">3</span></h1>
   </div>
@@ -14,9 +14,15 @@
       <i class="fa-light fa-image-polaroid-user"></i>
 
       <div class="margin">
-        <label>A. Tomar una foto de su rostro (Selfie)</label>
-        <img class= "dniFrontal" src="../../../assets/selfie.jpg" alt="dniFrontal">
+        <label>A. Tomar una foto de su rostro (Selfie) {{ markSelfie }}</label>
+        <img class= "dniSelfie" src="../../../assets/selfie.jpg" alt="dniSelfie">
         <button class="btnInsert" (click)="goToCaptureSelfie()" >Insertar</button>
+      </div>
+
+      <div class="msgError">
+        <label class="error" *ngIf="captureEmpty"
+          >Debe ingresar una selfie</label
+        >
       </div>
 
     <button class="btnSend" (click)="goToResult()">Siguiente</button>
@@ -34,5 +40,20 @@
   <button class="btnSend" (click)="endValid()">Finalizar</button>
 
 </div>
+
+<div class="resultContent" *ngIf="dataMsgError">
+  <h2>Error</h2>
+  <br />
+
+  <div>
+    <i class="fa-regular fa-face-frown-open" ></i>
+  </div>
+  <br />
+  <h4>{{msgError}}</h4>
+  <br />
+
+  <button class="btnSend" (click)="goBackSelfie()">Volver a capturar selfie</button>
+</div>
+
 
 

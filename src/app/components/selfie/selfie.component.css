@@ -87,3 +87,23 @@ h2{
 .captura{
   width: 80%;
 }
+
+.error{
+  color: red;
+  font-weight: bold;
+}
+
+.msgError{
+  display: flex;
+  justify-content: center;
+}
+
+.dniSelfie{
+  width: 10%;
+}
+
+@media (max-width: 768px){
+  .dniSelfie {
+    margin: 0% 3%;
+  }
+}

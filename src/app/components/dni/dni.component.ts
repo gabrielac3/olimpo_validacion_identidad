@@ -25,7 +25,10 @@ export class DniComponent implements OnInit{
 
   markFrontal: string= "";
   markBack: string= "";
+  msgError: string="";
   captureEmpty: boolean = false;
+  dataMsgError: boolean = false;
+  showDni: boolean = true;
 
 
   constructor(private router: Router, private restService: RestService) {
@@ -51,33 +54,27 @@ export class DniComponent implements OnInit{
     sessionStorage.setItem('flag', JSON.stringify("back"));
   }
 
-
-/*   getToken(){
-    this.restService.sendDni(this.dni)
-    .subscribe(data => {
-      console.log(data)
-      let token = data.values;
-      let t = token[0].t;
-      sessionStorage.setItem('token', t);
-    })
-  } */
-
   sendDniFotos(){
     this.fotodni.DNI = this.sesionDni;
-   /* this.fotodni.DNI = '44123456'; */
     this.fotodni.FOTO_FRONTAL = sessionStorage.getItem('dniFrontal');
     this.fotodni.FOTO_POSTERIOR = sessionStorage.getItem('dniBack');
     console.log(this.fotodni);
     this.restService.sendFotos(this.fotodni)
     .subscribe(data => {
-      console.log(data)
+      console.log(data);
+      this.msgError = data.msg;
+      if (data.ret == 'ERROR'){
+        this.dataMsgError = true;
+        this.showDni = false;
+      }else{
+        this.router.navigate(['selfie']);
+      }
     })
   }
 
   goToSelfie(){
     if (sessionStorage.getItem('dniFrontal') && sessionStorage.getItem('dniBack')){
       this.sendDniFotos();
-      this.router.navigate(['selfie']);
     }else{
       this.captureEmpty = true;
       setTimeout(() => {
@@ -85,6 +82,11 @@ export class DniComponent implements OnInit{
       }, 3000);
     }
 
+  }
+
+  goBackDni(){
+    this.dataMsgError = false;
+    this.showDni = true;
   }
 
 }

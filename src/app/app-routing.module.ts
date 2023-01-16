@@ -9,7 +9,6 @@ import { SelfieComponent } from './components/selfie/selfie.component';
 const routes: Routes = [
 
   { path: '', pathMatch: 'full', redirectTo: '/instructions' },
-/*   { path: '', pathMatch: 'full', redirectTo: '/pruebaCliente' }, */
   { path: 'instructions', component: InstructionsComponent },
   { path: 'dni', component: DniComponent },
   { path: 'selfie', component: SelfieComponent},
