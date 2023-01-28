@@ -35,7 +35,7 @@ h2{
   }
 } */
 
-@media (min-width: 425px){
+@media (min-width: 768px){
 .captureContent{
   display: flex;
   justify-content: space-evenly;
