@@ -7,7 +7,9 @@ body{
 .container{
   display:flex;
   align-items: center;
-  min-height: 100vh;
+/*   min-height: 100vh; */
+  min-height: 0vh;
+  margin-top: 3%;
 }
 
 button{
@@ -34,27 +36,31 @@ button{
 
 .validTitle{
   margin: 0px;
-  padding: 0px;
-  font-size: 130%;
+/*   padding: 0px;
+  font-size: 130%; */
   color:#f8f538;
+  font-size: 95%;
+  padding: 2% 0% 2% 10%;
 }
 
 .logoOlimpo{
-  width: 15%;
+/*   width: 15%; */
+  width: 35%;
 }
 
 #qbox-container {
   background: url(./app/olimpobetT2.png);
   background-repeat: space;
   position: relative;
-  padding: 40px;
+/*   padding: 40px; */
+  padding: 3%;
   max-height: 100vh;
   box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
   -webkit-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
   -moz-box-shadow: 10px 8px 21px 0px rgba(204, 204, 204, 0.75);
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
   #qbox-container {
   padding: 2%;
   }
@@ -86,6 +92,42 @@ button{
   .validTitle{
     font-size: 95%;
     padding: 2% 0% 2% 10%;
+  }
+
+} */
+
+@media (min-width: 768px){
+  #qbox-container {
+  padding: 2%;
+  }
+
+  .logoOlimpo{
+    width: 20%;
+  }
+
+  .validTitle{
+    font-size: 120%;
+    padding-left: 5%;
+  }
+}
+
+@media (min-width: 1200px){
+
+  #qbox-container {
+    padding: 40px;
+    }
+
+  .container{
+    min-height: 100vh;
+    margin-top: 0%;
+  }
+
+  .logoOlimpo{
+    width: 15%;
+  }
+  .validTitle{
+    padding: 0px;
+    font-size: 130%;
   }
 
 }
