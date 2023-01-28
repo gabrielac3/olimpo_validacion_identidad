@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { PruebaClienteComponent } from './components/prueba-cliente/prueba-cliente.component';
 import { SpinnerModule } from './components/spinner/spinner.module';
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
+import { CameraComponent } from './components/camera/camera.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
     DniComponent,
     SelfieComponent,
     CaptureComponent,
-    PruebaClienteComponent
+    PruebaClienteComponent,
+    CameraComponent
   ],
   imports: [
     BrowserModule,

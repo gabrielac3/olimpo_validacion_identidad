@@ -45,12 +45,12 @@ export class DniComponent implements OnInit{
   }
 
   goToCaptureFrontal(){
-    this.router.navigate(['capture']);
+    this.router.navigate(['camera']);
     sessionStorage.setItem('flag', JSON.stringify("frontal"));
   }
 
   goToCaptureBack(){
-    this.router.navigate(['capture']);
+    this.router.navigate(['camera']);
     sessionStorage.setItem('flag', JSON.stringify("back"));
   }
 
