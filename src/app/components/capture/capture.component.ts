@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Router } from '@angular/router';
@@ -9,6 +9,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./capture.component.css']
 })
 export class CaptureComponent implements OnInit {
+
+  public getScreenWidth: any;
+  public getScreenHeight: any;
+  detectorWidthMovil: boolean = true;
+  detectorWidthLaptop: boolean = false;
+
+  ngOnInit() {
+      this.getScreenWidth = window.innerWidth;
+      this.getScreenHeight = window.innerHeight;
+      console.log('ng oninit w * h', this.getScreenWidth, this.getScreenHeight)
+      if (this.getScreenWidth >= 522){
+        this.detectorWidthMovil = false;
+        this.detectorWidthLaptop = true;
+      }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.getScreenWidth = window.innerWidth;
+    this.getScreenHeight = window.innerHeight;
+
+    console.log('hostlistener w * h', this.getScreenWidth, this.getScreenHeight)
+  }
 
   private trigger: Subject<any> = new Subject();
   public webcamImage!: WebcamImage;
@@ -25,7 +48,7 @@ export class CaptureComponent implements OnInit {
   constructor(private router: Router) {
   }
 
-  ngOnInit() {}
+/*   ngOnInit() {} */
 
   public getSnapshot(): void {
     this.trigger.next(void 0);
