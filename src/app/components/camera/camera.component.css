@@ -16,3 +16,48 @@
 ul.links {
   padding-bottom: 20px;
 }
+
+
+/* .captureContent{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  padding: 0%;
+} */
+
+.captureContent{
+
+}
+
+h2{
+  margin: 7px;
+}
+
+.btnCapture{
+  background-color: #f8f538;
+  border: #f8f538;
+  color: #004422;
+  margin-top: 7px;
+}
+
+/* @media (max-width: 768px){
+  .captureContent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0%;
+  }
+} */
+
+@media (min-width: 768px){
+.captureContent{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  padding: 0%;
+}
+}
+

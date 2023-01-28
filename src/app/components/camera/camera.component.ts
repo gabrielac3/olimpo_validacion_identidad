@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-/* import {WebcamImage} from '../modules/webcam/domain/webcam-image'; */
-/* import {WebcamUtil} from '../modules/webcam/util/webcam.util';
-import {WebcamInitError} from '../modules/webcam/domain/webcam-init-error'; */
 
 import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-camera',
@@ -12,12 +10,14 @@ import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
   styleUrls: ['./camera.component.css']
 })
 export class CameraComponent implements OnInit {
+
+  constructor(private router: Router) {
+  }
   // toggle webcam on/off
   public showWebcam = true;
   public allowCameraSwitch = true;
   public multipleWebcamsAvailable = false;
   public deviceId: string | undefined;
-  public facingMode: string = 'environment';
   public messages: any[] = [];
 
   sysImage = '';
@@ -44,29 +44,13 @@ export class CameraComponent implements OnInit {
     this.trigger.next();
   }
 
-  public toggleWebcam(): void {
-    this.showWebcam = !this.showWebcam;
-  }
-
+//igual
   public handleInitError(error: WebcamInitError): void {
     this.messages.push(error);
     if (error.mediaStreamError && error.mediaStreamError.name === 'NotAllowedError') {
       this.addMessage('User denied camera access');
     }
   }
-
-  public showNextWebcam(directionOrDeviceId: boolean|string): void {
-    // true => move forward through devices
-    // false => move backwards through devices
-    // string => move to device with given deviceId
-    this.nextWebcam.next(directionOrDeviceId);
-  }
-
-/*   public handleImage(webcamImage: WebcamImage): void {
-    this.addMessage('Received webcam image');
-    console.log(webcamImage);
-    this.webcamImage = webcamImage;
-  } */
 
   public captureImg(webcamImage: WebcamImage): void {
     this.webcamImage = webcamImage;
@@ -80,12 +64,6 @@ export class CameraComponent implements OnInit {
     }
   }
 
-  public cameraWasSwitched(deviceId: string): void {
-    this.addMessage('Active device: ' + deviceId);
-    this.deviceId = deviceId;
-    this.readAvailableVideoInputs();
-  }
-
   addMessage(message: any): void {
     console.log(message);
     this.messages.unshift(message);
@@ -95,16 +73,13 @@ export class CameraComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
+  //igual
   public get nextWebcamObservable(): Observable<boolean|string> {
     return this.nextWebcam.asObservable();
   }
 
   public get videoOptions(): MediaTrackConstraints {
     const result: MediaTrackConstraints = {};
-    if (this.facingMode && this.facingMode !== '') {
-      result.facingMode = { ideal: this.facingMode };
-    }
-
     return result;
   }
 
@@ -114,4 +89,24 @@ export class CameraComponent implements OnInit {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       });
   }
+
+  public getSnapshot(): void {
+    this.trigger.next(void 0);
+    this.showCapture = true;
+    this.showCam= false;
+  }
+
+  public get invokeObservable(): Observable<any> {
+    return this.trigger.asObservable();
+  }
+
+  goToBack(){
+    if(this.flag==="frontal" || this.flag==="back"){
+      this.router.navigate(['dni']);
+    } else if (this.flag==="selfie"){
+      this.router.navigate(['selfie']);
+    }
+    sessionStorage.setItem('flag', JSON.stringify("none"));
+  }
+
 }

@@ -1,23 +1,31 @@
-<div style="text-align:center">
-  <h1>
-    ngx-webcam Demo
-  </h1>
-
+<div class="captureContent" *ngIf="showCam">
   <div>
     <webcam
-            [height]="480"
-            [width]="640"
+            [height]="405"
+            [width]="540"
             [trigger]="triggerObservable"
             (imageCapture)="captureImg($event)"
             *ngIf="showWebcam"
             [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
             [videoOptions]="videoOptions"
             [imageQuality]="1"
-            (cameraSwitched)="cameraWasSwitched($event)"
             (initError)="handleInitError($event)"
     ></webcam>
-    <br>
-    <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+  </div>
+
+  <div >
+    <button class="btnCapture" (click)="getSnapshot()">
+      Tomar Foto
+    </button>
+  </div>
+</div>
+<div class="captureContent" *ngIf="showCapture">
+  <div id="results">
+  </div>
+  <img [src]="webcamImage.imageAsDataUrl" height="405px" />
+  <button class="btnCapture" (click)="goToBack()">Guardar Imagen</button>
+</div>
+
 <!--     <button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
     <br>
     <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>

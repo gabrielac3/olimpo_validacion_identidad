@@ -4,11 +4,6 @@ body{
   color:#004422;
 }
 
-/* .container{
-  display:flex;
-  align-items: center;
-  min-height: 100vh;
-} */
 .container{
   position: absolute;
   top: 50%;
@@ -80,11 +75,6 @@ button{
   #qbox-container {
     padding: 3%
     }
-
-/*   .container{
-    min-height: 0vh;
-    margin-top: 3%;
-  } */
 
   .logoOlimpo{
     width: 35%;
