@@ -27,7 +27,7 @@
   border: #3cc666;
   color: #ffffff;
   float: right;
-  margin: 0 5%;
+  margin: 1.5% 5% 0%;
 }
 
 input{
@@ -69,6 +69,10 @@ h2{
   margin: 0%;
 }
 
+h4{
+  margin: 1%;
+}
+
 .margin{
   margin: 5% 2%;
   display: flex;
@@ -81,7 +85,7 @@ h2{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
 .captura{
@@ -100,6 +104,34 @@ h2{
 
 .dniSelfie{
   width: 10%;
+}
+
+table{
+  margin:0px;
+  border: 2px solid #004422;
+  border-radius: 10px;
+}
+
+.table>:not(caption)>*>* {
+  padding: 0.12rem 0.9rem;
+  font-size: 11px;
+}
+
+.tituloTabla{
+  text-align: center;
+  background-color: #004422;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 1%;
+  font-size: 12px;
+}
+.tableContainer{
+  display:flex;
+  justify-content: center;
+}
+
+td{
+  border: 1px solid #004422;
 }
 
 @media (max-width: 768px){

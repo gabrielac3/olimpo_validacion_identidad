@@ -20,13 +20,11 @@ export class PruebaClienteComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
   }
 
   getToken(){
     this.restService.sendDni(this.dni)
     .subscribe(data => {
-      console.log(data)
       let token = data.values;
       let t = token[0].t;
       sessionStorage.setItem('token', t);

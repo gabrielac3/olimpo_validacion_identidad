@@ -19,6 +19,7 @@
         <button class="btnInsert" (click)="goToCaptureSelfie()" >Insertar</button>
       </div>
 
+
       <div class="msgError">
         <label class="error" *ngIf="captureEmpty"
           >Debe ingresar una selfie</label
@@ -33,9 +34,51 @@
 
 <div class="resultContent" *ngIf="showResult">
 
-  <h2>Resultado</h2><br>
+  <h2>Resultado</h2>
 
-  <h4>Su DNI fue validado con éxito</h4><br>
+  <h4>Su DNI fue validado con éxito</h4>
+
+  <div class="tableContainer">
+    <table class="table">
+      <thead>
+        <tr>
+          <td colspan="4" class="tituloTabla">Datos del DNI</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DNI</td>
+          <td>{{selfie.DNI}}</td>
+        </tr>
+        <tr>
+          <td>OCR NOMBRES</td>
+          <td>{{nombre}}</td>
+        </tr>
+        <tr>
+          <td>OCR APELLIDO PATERNO</td>
+          <td>{{apePaterno}}</td>
+        </tr>
+        <tr>
+          <td>OCR APELLIDO MATERNO</td>
+          <td>{{apeMaterno}}</td>
+        </tr>
+        <tr>
+          <td>OCR FECHA DE EMISIÓN</td>
+          <td>{{fechaEmision}}</td>
+        </tr>
+        <tr>
+          <td>OCR FECHA DE CADUCIDAD</td>
+          <td>{{fechaCaducidad}}</td>
+        </tr>
+        <tr>
+          <td>OCR FECHA DE NACIMIENTO</td>
+          <td>{{fechaNacimiento}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
 
   <button class="btnSend" (click)="endValid()">Finalizar</button>
 

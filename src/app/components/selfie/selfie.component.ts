@@ -21,6 +21,13 @@ export class SelfieComponent implements OnInit{
   markSelfie: string= "";
   msgError: string="";
 
+  nombre: string="";
+  apeMaterno: string="";
+  apePaterno: string="";
+  fechaEmision: string="";
+  fechaCaducidad: string="";
+  fechaNacimiento: string="";
+
   dataMsgError: boolean = false;
 
   constructor(private router: Router, private restService: RestService) {
@@ -30,8 +37,7 @@ export class SelfieComponent implements OnInit{
     if (sessionStorage.getItem('dniSelfie')){
       this.markSelfie = '✅';
     }
-}
-
+  }
 
   goToCaptureSelfie(){
     this.router.navigate(['capture']);
@@ -40,11 +46,20 @@ export class SelfieComponent implements OnInit{
 
   sendSelfieFoto(){
     this.selfie.DNI = sessionStorage.getItem('dni');
+
     this.selfie.FOTO_SELFIE = sessionStorage.getItem('dniSelfie');
-    console.log(this.selfie);
+
     this.restService.sendSelfie(this.selfie)
     .subscribe(data => {
-      console.log(data);
+      console.log('sendSelfieFoto',data);
+
+      this.nombre = data.values[0].prenombres;
+      this.apeMaterno = data.values[0].apellido_materno;
+      this.apePaterno = data.values[0].apellido_paterno;
+      this.fechaEmision = data.values[0].fecha_de_emision;
+      this.fechaCaducidad = data.values[0].fecha_de_caducidad;
+      this.fechaNacimiento = data.values[0].fecha_de_nacimiento;
+
       this.msgError = data.msg;
       if (data.ret == 'ERROR'){
         this.dataMsgError = true;

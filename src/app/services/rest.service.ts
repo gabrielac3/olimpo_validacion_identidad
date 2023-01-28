@@ -12,7 +12,6 @@ import { Selfie } from '../Interfaces/selfie.interface';
 export class RestService {
 
   baseURL: string = "http://192.168.239.79/api_poc_olimpo/api/";
-  /* tokensesion = sessionStorage.getItem('token'); */
 
   constructor(private http: HttpClient){}
 
@@ -22,9 +21,7 @@ export class RestService {
       'Content-Type': 'application/json'
     }
     const body=JSON.stringify(dni);
-    console.log(body)
     return this.http.post(this.baseURL + 'Tokenizador', body,{'headers':headers})
-
   }
 
 getDNI(): Observable <any> {
@@ -48,7 +45,6 @@ sendFotos(fotoDni: Fotodni): Observable <any> {
       'Content-Type': 'application/json'
   }
   const body=JSON.stringify(fotoDni);
-  console.log(body)
   return this.http.post(this.baseURL + 'DNI/GrabarFotosDNI', body,{'headers':headers})
 }
 
@@ -61,7 +57,6 @@ sendSelfie(selfie: Selfie): Observable <any> {
       'Content-Type': 'application/json'
   }
   const body=JSON.stringify(selfie);
-  console.log(body)
   return this.http.post(this.baseURL + 'DNI/GrabarFotoSelfie', body,{'headers':headers})
 }
 

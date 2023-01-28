@@ -36,7 +36,6 @@ export class CaptureComponent implements OnInit {
   public captureImg(webcamImage: WebcamImage): void {
     this.webcamImage = webcamImage;
     this.sysImage = webcamImage.imageAsDataUrl;
-    console.info('got webcam image', this.sysImage);
     if(this.flag==="frontal"){
       sessionStorage.setItem('dniFrontal', JSON.stringify(this.sysImage));
     } else if (this.flag==="back"){
@@ -70,11 +69,8 @@ export class CaptureComponent implements OnInit {
   }
 
   public get videoOptions(): MediaTrackConstraints {
-    //you can set ideal,min,max for width and height
-            const result: MediaTrackConstraints = {width:{min:40,ideal:640},
-            height:{min:30,ideal:480}};
-
-
+            const result: MediaTrackConstraints = {width:{min:40,ideal:1200},
+            height:{min:30,ideal:900}};
         return result;
       }
 

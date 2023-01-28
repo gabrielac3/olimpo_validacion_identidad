@@ -58,10 +58,10 @@ export class DniComponent implements OnInit{
     this.fotodni.DNI = this.sesionDni;
     this.fotodni.FOTO_FRONTAL = sessionStorage.getItem('dniFrontal');
     this.fotodni.FOTO_POSTERIOR = sessionStorage.getItem('dniBack');
-    console.log(this.fotodni);
+
     this.restService.sendFotos(this.fotodni)
     .subscribe(data => {
-      console.log(data);
+      console.log('sendDniFotos',data);
       this.msgError = data.msg;
       if (data.ret == 'ERROR'){
         this.dataMsgError = true;
@@ -75,6 +75,7 @@ export class DniComponent implements OnInit{
   goToSelfie(){
     if (sessionStorage.getItem('dniFrontal') && sessionStorage.getItem('dniBack')){
       this.sendDniFotos();
+      console.log(this.fotodni);
     }else{
       this.captureEmpty = true;
       setTimeout(() => {

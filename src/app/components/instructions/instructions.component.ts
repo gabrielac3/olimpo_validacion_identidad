@@ -16,14 +16,10 @@ export class InstructionsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       const dni: any = params['DNI'] || null;
-      console.log(dni);
-      
       const token: any = params['t'] || null;
-      console.log(token);
       sessionStorage.setItem('dni', dni);
       sessionStorage.setItem('token', token);
   })
-
   }
 
   senPart1(){
