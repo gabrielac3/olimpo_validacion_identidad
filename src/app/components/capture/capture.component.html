@@ -3,7 +3,6 @@
     <webcam *ngIf="webcamImage==null"
       [trigger]="invokeObservable"
       (imageCapture)="captureImg($event)"
-      [height]="405"
       [switchCamera]="nextWebcamObservable"
       [videoOptions]="videoOptions"
       [imageQuality]="1"
