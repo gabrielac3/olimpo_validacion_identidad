@@ -4,7 +4,7 @@ body{
   color:#004422;
 }
 
-.container{
+.contenedor{
   display:flex;
   align-items: center;
   min-height: 100vh;
@@ -75,7 +75,7 @@ button{
     padding: 3%
     }
 
-  .container{
+  .contenedor{
     min-height: 0vh;
     margin-top: 3%;
   }
