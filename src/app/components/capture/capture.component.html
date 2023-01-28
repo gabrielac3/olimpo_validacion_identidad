@@ -1,5 +1,5 @@
 <div class="captureContent" *ngIf="showCam">
-<!--   <div>
+  <div>
     <webcam *ngIf="webcamImage==null"
       [trigger]="invokeObservable"
       (imageCapture)="captureImg($event)"
@@ -10,8 +10,8 @@
       [imageQuality]="1"
       (initError)="handleInitError($event)"
     ></webcam>
-  </div> -->
-  <div *ngIf="detectorWidthLaptop">
+  </div>
+<!--   <div *ngIf="detectorWidthLaptop">
     <webcam *ngIf="webcamImage==null"
       [trigger]="invokeObservable"
       (imageCapture)="captureImg($event)"
@@ -34,7 +34,7 @@
       [imageQuality]="1"
       (initError)="handleInitError($event)"
     ></webcam>
-  </div>
+  </div> -->
   <div >
     <button class="btnCapture" (click)="getSnapshot()">
       Tomar Foto
@@ -44,7 +44,7 @@
 <div class="captureContent" *ngIf="showCapture">
   <div id="results">
   </div>
-  <img [src]="webcamImage.imageAsDataUrl" height="px" />
+  <img [src]="webcamImage.imageAsDataUrl" height="480px" />
   <button class="btnCapture" (click)="goToBack()">Guardar Imagen</button>
 </div>
 
