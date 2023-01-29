@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CameraComponent } from './components/camera/camera.component';
 import { CaptureComponent } from './components/capture/capture.component';
 import { DniComponent } from './components/dni/dni.component';
 import { InstructionsComponent } from './components/instructions/instructions.component';
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path: 'dni', component: DniComponent },
   { path: 'selfie', component: SelfieComponent},
   { path: 'capture', component: CaptureComponent},
-  { path: 'camera', component: CameraComponent},
   { path: 'pruebaCliente', component: PruebaClienteComponent }
 
 ];
