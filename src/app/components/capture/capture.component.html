@@ -44,7 +44,8 @@
 <div class="captureContent" *ngIf="showCapture">
   <div id="results">
   </div>
-  <img [src]="webcamImage.imageAsDataUrl" height="405px" />
+  <img *ngIf="detectorWidthMovil" [src]="webcamImage.imageAsDataUrl" height="480px" />
+  <img *ngIf="detectorWidthLaptop" [src]="webcamImage.imageAsDataUrl" height="405px" />
   <button class="btnCapture" (click)="goToBack()">Guardar Imagen</button>
 </div>
 
