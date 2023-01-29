@@ -12,7 +12,10 @@ export class CaptureComponent implements OnInit {
 
   private trigger: Subject<any> = new Subject();
   public webcamImage!: WebcamImage;
-  private nextWebcam: Subject<any> = new Subject();
+ /*  private nextWebcam: Subject<any> = new Subject(); */
+
+  private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
+
   sysImage = '';
 
   showCapture: boolean = false;

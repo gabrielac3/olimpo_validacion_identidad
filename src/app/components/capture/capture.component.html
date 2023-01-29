@@ -9,32 +9,10 @@
       [videoOptions]="videoOptions"
       [imageQuality]="1"
       (initError)="handleInitError($event)"
+      [switchCamera]="nextWebcamObservable"
     ></webcam>
   </div>
-<!--   <div *ngIf="detectorWidthLaptop">
-    <webcam *ngIf="webcamImage==null"
-      [trigger]="invokeObservable"
-      (imageCapture)="captureImg($event)"
-      [height]="405"
-      [width]="540"
-      [switchCamera]="nextWebcamObservable"
-      [videoOptions]="videoOptions"
-      [imageQuality]="1"
-      (initError)="handleInitError($event)"
-    ></webcam>
-  </div>
-  <div *ngIf="detectorWidthMovil">
-    <webcam *ngIf="webcamImage==null"
-      [trigger]="invokeObservable"
-      (imageCapture)="captureImg($event)"
-      [height]="375"
-      [width]="500"
-      [switchCamera]="nextWebcamObservable"
-      [videoOptions]="videoOptions"
-      [imageQuality]="1"
-      (initError)="handleInitError($event)"
-    ></webcam>
-  </div> -->
+
   <div >
     <button class="btnCapture" (click)="getSnapshot()">
       Tomar Foto
