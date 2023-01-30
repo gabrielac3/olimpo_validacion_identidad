@@ -20,8 +20,8 @@ export class CaptureComponent implements OnInit {
       this.getScreenHeight = window.innerHeight;
       console.log('ng oninit w * h', this.getScreenWidth, this.getScreenHeight)
       if (this.getScreenWidth >= 522){
-        this.detectorWidthMovil = true;
-        this.detectorWidthLaptop = false;
+        this.detectorWidthMovil = false;
+        this.detectorWidthLaptop = true;
       }
   }
 
@@ -31,6 +31,10 @@ export class CaptureComponent implements OnInit {
     this.getScreenHeight = window.innerHeight;
 
     console.log('hostlistener w * h', this.getScreenWidth, this.getScreenHeight)
+    if (this.getScreenWidth >= 522){
+      this.detectorWidthMovil = false;
+      this.detectorWidthLaptop = true;
+    }
   }
 
   private trigger: Subject<any> = new Subject();
