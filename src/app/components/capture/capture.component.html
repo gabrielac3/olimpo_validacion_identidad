@@ -1,5 +1,8 @@
 <div class="captureContent" *ngIf="showCam">
   <div *ngIf="detectorWidthLaptop">
+<!--     <div class="cuadro">
+      <div class="centerImage"></div>
+    </div> -->
     <webcam *ngIf="webcamImage==null"
       [trigger]="invokeObservable"
       (imageCapture)="captureImg($event)"
@@ -11,7 +14,7 @@
       (initError)="handleInitError($event)"
     ></webcam>
   </div>
-  <div *ngIf="detectorWidthMovil">
+  <div class="detector" *ngIf="detectorWidthMovil">
     <div class="cuadro">
       <div class="centerImage"></div>
     </div>
