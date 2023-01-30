@@ -12,7 +12,7 @@
     ></webcam>
   </div>
   <div class="detector" *ngIf="detectorWidthMovil">
-    <div class="cuadro">
+    <div class="cuadro" *ngIf="capturaDni">
       <div class="centerImage"></div>
     </div>
     <webcam *ngIf="webcamImage==null"

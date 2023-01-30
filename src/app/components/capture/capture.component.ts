@@ -15,6 +15,8 @@ export class CaptureComponent implements OnInit {
   detectorWidthMovil: boolean = true;
   detectorWidthLaptop: boolean = false;
 
+  capturaDni: boolean = true;
+
   ngOnInit() {
       this.getScreenWidth = window.innerWidth;
       this.getScreenHeight = window.innerHeight;
@@ -22,6 +24,10 @@ export class CaptureComponent implements OnInit {
       if (this.getScreenWidth >= 522){
         this.detectorWidthMovil = false;
         this.detectorWidthLaptop = true;
+      }
+
+      if(this.flag==="selfie"){
+        this.capturaDni=false;
       }
   }
 
