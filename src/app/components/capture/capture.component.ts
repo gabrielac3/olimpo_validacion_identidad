@@ -58,8 +58,6 @@ export class CaptureComponent implements OnInit {
   constructor(private router: Router) {
   }
 
-/*   ngOnInit() {} */
-
   public getSnapshot(): void {
     this.trigger.next(void 0);
     this.showCapture = true;
