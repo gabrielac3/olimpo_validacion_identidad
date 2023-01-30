@@ -12,8 +12,8 @@ export class CaptureComponent implements OnInit {
 
   public getScreenWidth: any;
   public getScreenHeight: any;
-  detectorWidthMovil: boolean = true;
-  detectorWidthLaptop: boolean = false;
+  detectorWidthMovil: boolean = false;
+  detectorWidthLaptop: boolean = true;
 
   ngOnInit() {
       this.getScreenWidth = window.innerWidth;
